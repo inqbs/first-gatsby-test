@@ -1,21 +1,24 @@
 import * as React from "react"
 import { Link } from 'gatsby'
 
+import 'normalize.css'
+import {container, header, navList, navItem, navLink} from '@/assets/scss/layout.module.scss'
+
 const Layout = ({pageTitle, children}) => {
   return (
-    <div>
+    <div className={container}>
       <title>{pageTitle}</title>
-      <header>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">home</Link>
-          </li>
-          <li>
-            <Link to="/about">about</Link>
-          </li>
-        </ul>
-      </nav>
+      <header className={header}>
+        <nav>
+          <ul className={navList}>
+            <li className={navItem}>
+              <Link className={navLink} to="/">home</Link>
+            </li>
+            <li className={navItem}>
+              <Link className={navLink} to="/about">about</Link>
+            </li>
+          </ul>
+        </nav>
       </header>
       <main>
         <h1>{pageTitle}</h1>
