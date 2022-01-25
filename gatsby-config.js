@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   siteMetadata: {
     title: `My Gatsby Test`,
@@ -36,6 +38,15 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          "@": path.resolve(__dirname, "src"),
+        },
+        extensions: [],
       },
     },
   ],
