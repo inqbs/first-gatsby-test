@@ -2,7 +2,13 @@ import * as React from "react"
 import { Link } from 'gatsby'
 
 import 'normalize.css'
-import {container, header, navList, navItem, navLink} from '@/assets/scss/layout.module.scss'
+import { container, header, navList, navItem, navLink } from '@/assets/scss/layout.module.scss'
+
+const menuList = [
+  { path: '/', name: 'home' },
+  { path: '/about', name: 'about' },
+  { path: '/blog', name: 'blog' },
+]
 
 const Layout = ({pageTitle, children}) => {
   return (
@@ -11,12 +17,13 @@ const Layout = ({pageTitle, children}) => {
       <header className={header}>
         <nav>
           <ul className={navList}>
-            <li className={navItem}>
-              <Link className={navLink} to="/">home</Link>
-            </li>
-            <li className={navItem}>
-              <Link className={navLink} to="/about">about</Link>
-            </li>
+            {
+              menuList.map(({ path, name }) =>
+                <li className={navItem}>
+                  <Link className={navLink} to={path}>{name}</Link>
+                </li>
+              )
+            }
           </ul>
         </nav>
       </header>
