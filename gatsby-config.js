@@ -63,5 +63,15 @@ module.exports = {
         extensions: [],
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: [
+          'Georgia\:400,700',
+          'Jost\:400,700,900'
+        ],
+        display: 'swap'
+      }
+    }
   ],
 };

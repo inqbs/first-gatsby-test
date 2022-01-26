@@ -57,6 +57,7 @@ export type File = Node & {
   birthtimeMs?: Maybe<Scalars['Float']>;
   blksize?: Maybe<Scalars['Int']>;
   blocks?: Maybe<Scalars['Int']>;
+  url?: Maybe<Scalars['String']>;
   /** Copy file to static directory and return public url to it */
   publicURL?: Maybe<Scalars['String']>;
   /** Returns all children nodes filtered by type Mdx */
@@ -911,6 +912,7 @@ export type QueryFileArgs = {
   birthtimeMs?: InputMaybe<FloatQueryOperatorInput>;
   blksize?: InputMaybe<IntQueryOperatorInput>;
   blocks?: InputMaybe<IntQueryOperatorInput>;
+  url?: InputMaybe<StringQueryOperatorInput>;
   publicURL?: InputMaybe<StringQueryOperatorInput>;
   childrenMdx?: InputMaybe<MdxFilterListInput>;
   childMdx?: InputMaybe<MdxFilterInput>;
@@ -1342,6 +1344,7 @@ export type FileFilterInput = {
   birthtimeMs?: InputMaybe<FloatQueryOperatorInput>;
   blksize?: InputMaybe<IntQueryOperatorInput>;
   blocks?: InputMaybe<IntQueryOperatorInput>;
+  url?: InputMaybe<StringQueryOperatorInput>;
   publicURL?: InputMaybe<StringQueryOperatorInput>;
   childrenMdx?: InputMaybe<MdxFilterListInput>;
   childMdx?: InputMaybe<MdxFilterInput>;
@@ -1554,6 +1557,7 @@ export type FileFieldsEnum =
   | 'birthtimeMs'
   | 'blksize'
   | 'blocks'
+  | 'url'
   | 'publicURL'
   | 'childrenMdx'
   | 'childrenMdx___rawBody'
@@ -1593,6 +1597,7 @@ export type FileFieldsEnum =
   | 'childrenMdx___frontmatter___banner_image___birthtimeMs'
   | 'childrenMdx___frontmatter___banner_image___blksize'
   | 'childrenMdx___frontmatter___banner_image___blocks'
+  | 'childrenMdx___frontmatter___banner_image___url'
   | 'childrenMdx___frontmatter___banner_image___publicURL'
   | 'childrenMdx___frontmatter___banner_image___childrenMdx'
   | 'childrenMdx___frontmatter___banner_image___childrenImageSharp'
@@ -1687,6 +1692,7 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___banner_image___birthtimeMs'
   | 'childMdx___frontmatter___banner_image___blksize'
   | 'childMdx___frontmatter___banner_image___blocks'
+  | 'childMdx___frontmatter___banner_image___url'
   | 'childMdx___frontmatter___banner_image___publicURL'
   | 'childMdx___frontmatter___banner_image___childrenMdx'
   | 'childMdx___frontmatter___banner_image___childrenImageSharp'
@@ -3399,6 +3405,7 @@ export type MdxFieldsEnum =
   | 'frontmatter___banner_image___birthtimeMs'
   | 'frontmatter___banner_image___blksize'
   | 'frontmatter___banner_image___blocks'
+  | 'frontmatter___banner_image___url'
   | 'frontmatter___banner_image___publicURL'
   | 'frontmatter___banner_image___childrenMdx'
   | 'frontmatter___banner_image___childrenMdx___rawBody'
