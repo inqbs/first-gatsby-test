@@ -1,19 +1,21 @@
-import * as React from "react";
-import { Link, graphql } from "gatsby";
+import React, { FC } from "react";
+import { Link, graphql, PageProps } from "gatsby";
+import { AllBlogPostQuery } from "types/graphql-types";
 
 import Layout from "@/components/layout";
 
-const BlogPage = ({ data }) => {
+const BlogPage: FC<PageProps<AllBlogPostQuery>> = ({ data }): any => {
+  const articles = data.allMdx.nodes
   return (
     <Layout pageTitle="Blog">
-      {data.allMdx.nodes.map((node) => (
+      {articles.map((node) => (
         <article key={node.id}>
           <h2>
             <Link to={`/blog/${node.slug}`}>
-              {node.frontmatter.title}
+              {node?.frontmatter?.title}
             </Link>
           </h2>
-          <p>Posted on {node.frontmatter.date}</p>
+          <p>Posted on {node?.frontmatter?.date}</p>
         </article>
       ))}
     </Layout>
@@ -21,7 +23,7 @@ const BlogPage = ({ data }) => {
 };
 
 export const query = graphql`
-  query AllBlogPostQuery {
+  query AllBlogPost {
     allMdx(sort: { fields: frontmatter___date, order: DESC }) {
       nodes {
         frontmatter {

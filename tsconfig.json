@@ -11,10 +11,14 @@
     "paths": {
       "@/*": [
         "src/*"
-      ]
+      ],
+      "types/*": [
+        "types/*"
+      ],
     },
     "strict": true,
     "noEmit": true,
+    "skipLibCheck": true,
     "isolatedModules": true,
     "esModuleInterop": true,
     "noUnusedLocals": false,
