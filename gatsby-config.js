@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: `https://www.yourdomain.tld`,
   },
   plugins: [
+    'gatsby-plugin-typescript',
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
     "gatsby-plugin-mdx",
